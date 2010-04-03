@@ -1,24 +1,24 @@
 # Recstore
 
-TV recording system on top of Apache CouchDB. This package can be used only in Japan.
+CouchDBで実装されたオンラインTV録画システムです。
 
-# Requirements
+# 前提ソフトウェア
 
 - Apache CouchDB 0.11.0
 - Python 2.6 
 - Python restkit
 - recfriio
 
-# Installation
-## Deploy on CouchDB
+# インストール
+## CouchDBへのデプロイ
 
-    $ git clone ....
+    $ git clone git://github.com/yssk22/recstore.git
     $ cd recstore
     $ couchapp push http://admin:password@host:port/recstore
 
-## Configureing crontab
+## crontab の設定
 
-You need to confgiure crontab on your recording server (where recfriio is available) enable to collect iEPG information from infoseek(http://tv.infoseek.co.jp/).
+録画サーバー(recfriioが導入されたサーバー)でiEPG情報のクローリング・録画スケジューリングのためのcron設定を行います。
 
     COUCH_URL=http://admin:password@host:port/recstore
     LOG_DIR=/var/log/recstore
@@ -29,7 +29,8 @@ You need to confgiure crontab on your recording server (where recfriio is availa
     # --- scheduler
     */2 * * * * /usr/bin/curl -X GET ${COUCH_URL}/recstore/_design/recstore/scripts/scheduler.py | /usr/bin/python2.6 - -d ${COUCH_URL}/recstore 2>&1 > ${LOG_DIR}/recstore_scheduler.log
 
+尚、上記の方法だと、プロセスの実行中に COUCH_URLが展開されるため、ps コマンドで CouchDBのパスワードを見ることができてしまうため、注意して設定してください。
 
 # License
 
-See LICENSE file (in Japanese)
+LICENSE ファイルを参照してください。
