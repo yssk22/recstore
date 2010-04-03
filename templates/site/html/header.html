@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TV Rec Store</title>
+    <link href="{{assetPath}}/vendor/jquery-ui/css/start/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" media="all">
+    <link href="{{assetPath}}/css/site.css" rel="stylesheet" type="text/css" media="all">
+    <link href="{{assetPath}}/css/lineup.css" rel="stylesheet" type="text/css" media="all">
+    <link href="{{assetPath}}/css/schedule.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="/_utils/script/jquery.js"></script>
+    <script type="text/javascript" src="/_utils/script/jquery.couch.js"></script>
+    <script type="text/javascript" src="{{assetPath}}/vendor/couchapp/jquery.couch.app.js"></script>
+    <script type="text/javascript" src="{{assetPath}}/vendor/couchapp/jquery.couch.app.util.js"></script>
+    <script type="text/javascript" src="{{assetPath}}/vendor/couchapp/jquery.mustache.js"></script>
+    <script type="text/javascript" src="{{assetPath}}/js/site.js"></script>
+  </head>
+<body>
+<header class="site">
+  <div id="userCtx">
+    <span style="display: inline;" class="loggedout">
+      <a href="javascript:void(0);" class="login">Login</a>
+    </span>
+    <span style="display: none;" class="loggedin">
+      Welcome <a class="name">?</a>! 
+      <a href="javascript:void(0);" class="logout">Logout</a>
+    </span>
+    <span style="display: none;" class="loggedinadmin">
+      Welcome <a class="name">?</a>! 
+      <a href="javascript:void(0);" class="logout">Logout</a> 
+    </span>
+    <span style="display: none;" class="adminparty">
+      Welcome to Admin Party!  Everyone is admin.
+    </span>
+  </div>
+  <div>
+    <h1>
+      <a href="{{assetPath}}/_show/lineup">TV Record on CouchDB</a>
+    </h1>
+  </div>
+</header>
+<div id="main" class="site">

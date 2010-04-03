@@ -1,0 +1,57 @@
+.ui-widget {
+    font-size: 9pt;
+}
+
+#template {
+    display: none;
+}
+#login {
+    font-size: 9pt;
+}
+
+div.lineup {
+    font-size: 9pt;
+}
+div.lineup #date {
+    font-size: 16pt;
+    width: 140px;
+}
+
+div.lineup table {
+    width: 100%;
+}
+
+div.lineup tbody tr td{
+    vertical-align:top;
+    border: solid 1px #cccccc;
+}
+
+div.lineup tbody tr td.record{
+    background-color: #fcd113;
+}
+
+div.lineup tbody tr td.program a.rec{
+    display: inline;
+}
+div.lineup tbody tr td.program a.unrec{
+    display: none;
+}
+
+div.lineup tbody tr td.record a.rec{
+    display: none;
+}
+div.lineup tbody tr td.record a.unrec{
+    display: inline;
+}
+
+
+div.lineup tbody tr td.padding{
+    background-color: #eeeeee;
+}
+
+div.lineup tbody tr td.hrow,
+div.lineup thead tr th{
+    font-size: 10pt;
+    vertical-align:middle;
+    text-align: center;
+}

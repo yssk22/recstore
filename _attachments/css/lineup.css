@@ -1,0 +1,65 @@
+div.lineup {
+    font-size: 9pt;
+}
+
+div.lineup header {
+    margin-bottom: 10px;
+}
+
+div.lineup form#date-navigator {
+    font-size: 14pt;
+    vertical-align: middle;
+}
+div.lineup form#date-navigator input#date{
+    font-size: 12pt;
+    border: none;
+    width: 100px;
+}
+
+div.lineup div#links {
+    float:right;
+    font-size: 14pt;
+}
+
+div.lineup table {
+    width: 100%;
+}
+
+div.lineup tbody tr td{
+    vertical-align:top;
+    border: solid 1px #cccccc;
+}
+
+div.lineup tbody tr td.record{
+    background-color: #fcd113;
+}
+
+div.lineup tbody tr td.program a.rec{
+    display: inline;
+}
+
+div#main.guest a.rec,
+div#main.guest a.unrec{
+    display: none;
+}
+
+div#main.admin div.lineup tbody tr td.program a.unrec{
+    display: none;
+}
+div#main.admin div.lineup tbody tr td.record a.rec{
+    display: none;
+}
+div#main.admin div.lineup tbody tr td.record a.unrec{
+    display: inline;
+}
+
+div.lineup tbody tr td.padding{
+    background-color: #eeeeee;
+}
+
+div.lineup tbody tr td.hrow,
+div.lineup thead tr th{
+    font-size: 10pt;
+    vertical-align:middle;
+    text-align: center;
+}

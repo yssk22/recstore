@@ -1,0 +1,27 @@
+div.odd {
+    border-top: solid 2px #cccccc;
+}
+div.even {
+    border-top: solid 2px #ccccff;
+}
+
+div.row {
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+div.row header{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+div.row header h3 {
+    margin-bottom: 0px;
+    
+}
+
+div.row footer{
+    text-align: right;
+    display: block;
+}

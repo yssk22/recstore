@@ -1,0 +1,58 @@
+body {
+    font-size: 9pt;
+}
+
+header, footer{
+    display: block
+}
+
+header h1 a {
+    text-decoration: none;
+}
+
+a.icon {
+    padding: 0 16px 0 0;
+    background: transparent url('') no-repeat center right;
+}
+img.icon {
+    border:none;
+    vertical-align: middle;
+}
+
+
+.ui-widget {
+    font-size: 9pt;
+}
+
+
+header.site {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: #eeeeee 1px solid;
+}
+
+header.site div#userCtx {
+    float: right;
+}
+
+div#main {
+    clear:both;
+}
+
+footer.site {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: #eeeeee 1px solid;
+    text-align: right;
+
+}
+
+
+/** Login form **/
+form#login {
+    font-size: 9pt;
+}
+
+#template {
+    display: none;
+}
