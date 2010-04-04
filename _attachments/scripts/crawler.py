@@ -73,8 +73,22 @@ def parse_iepg(txt):
         doc[key] = value.strip()
 
     doc["memo"] = memo
-
     return doc
+
+def import_iepg(db, link):
+    try:
+        print "url = %s" % link
+        _id = md5(link).hexdigest()
+        epg = fetch_content(link)
+        doc = parse_iepg(epg)
+        doc["_id"] = _id
+        doc["type"] = "iepg"
+        doc["url"] = link
+        print "   id = %s" % doc["_id"]
+        print "title = %s" % doc["program-title"]
+        insert_or_update(db, doc)
+    except Exception, e:
+        traceback.print_exec()
 
 if __name__ == "__main__":
     try:
@@ -111,26 +125,16 @@ if __name__ == "__main__":
     except ResourceNotFound:
         db.put() # create a database
 
-    for url in url_list(days = n):
+    list = url_list(days = n)
+    print "Collecting iEPG data from %s Urls" % len(list)
+    for url in list:
         print "Fetching epg list menu from %s ..." % url
         content = fetch_content(url)
         links =  extract_epg_link(content)
         print "%s iEPGs found." % len(links)
         founds += len(links)
         for link in links:
-            try:
-                print "Converting iEPG to couch document"
-                print "url = %s" % link
-                _id = md5(link).hexdigest()
-                epg = fetch_content(link)
-                doc = parse_iepg(epg)
-                doc["_id"] = _id
-                doc["type"] = "iepg"
-                doc["url"] = link
-                print "   id = %s" % doc["_id"]
-                print "title = %s" % doc["program-title"]
-                insert_or_update(db, doc)
-            except Exception, e:
-                traceback.print_exec()
+            import_iepg(db, link)
+
     t2 = time.time()
     print "%s iEPGs imported in %.2fs sec." % (founds, (t2 - t1))
